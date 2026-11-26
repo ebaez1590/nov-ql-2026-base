@@ -11,6 +11,10 @@
   --text: #1f2937;
   --muted: #6b7280;
   --error: #b91c1c;
+  --surface: #fff;
+  --on-primary: #fff;
+  --disabled: #9ca3af;
+  --shadow: rgb(20 83 45 / 0.15);
 
   font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
   color: var(--text);
@@ -32,10 +36,10 @@ body {
 .app {
   width: 100%;
   max-width: 480px;
-  background: #fff;
+  background: var(--surface);
   border-radius: 16px;
   border-top: 6px solid var(--green-600);
-  box-shadow: 0 10px 30px rgb(20 83 45 / 0.15);
+  box-shadow: 0 10px 30px var(--shadow);
   padding: 2rem 1.5rem;
   display: flex;
   flex-direction: column;
@@ -105,7 +109,7 @@ h2 {
 .btn-primary {
   padding: 0.95rem;
   background: var(--green-600);
-  color: #fff;
+  color: var(--on-primary);
   font-size: 1.15rem;
 }
 
@@ -114,7 +118,7 @@ h2 {
 }
 
 .btn-primary:disabled {
-  background: #9ca3af;
+  background: var(--disabled);
   cursor: not-allowed;
 }
 
@@ -186,7 +190,7 @@ h2 {
   padding: 1.5rem 1rem;
   border-radius: 14px;
   background: linear-gradient(135deg, var(--green-600), var(--green-800));
-  color: #fff;
+  color: var(--on-primary);
 }
 
 .result-title {

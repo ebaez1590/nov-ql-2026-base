@@ -9,11 +9,12 @@
   "scripts": {
     "openspec": "openspec",
     "dev": "vite",
-    "build": "vite build",
+    "build": "tsc && vite build",
     "preview": "vite preview"
   },
   "devDependencies": {
     "@fission-ai/openspec": "^2.1.1",
+    "typescript": "^7.0.2",
     "vite": "^8.3.8"
   }
 }
