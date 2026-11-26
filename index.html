@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Selector de ganadores</title>
+  </head>
+  <body>
+    <main class="app">
+      <header>
+        <h1>🎉 Selector de ganadores</h1>
+        <p class="subtitle">Agrega a los participantes y sortea un ganador al azar.</p>
+      </header>
+
+      <form id="participant-form" class="add-form">
+        <input
+          id="participant-input"
+          type="text"
+          placeholder="Nombre del participante"
+          autocomplete="off"
+          maxlength="60"
+          aria-label="Nombre del participante"
+        />
+        <button type="submit" class="btn btn-secondary">Agregar</button>
+      </form>
+      <p id="form-error" class="error" role="alert"></p>
+
+      <section class="participants">
+        <div class="participants-header">
+          <h2>Participantes (<span id="count">0</span>)</h2>
+          <button id="clear-btn" type="button" class="btn-link" hidden>Vaciar lista</button>
+        </div>
+        <ul id="participant-list"></ul>
+        <p id="empty-msg" class="empty">Todavía no hay participantes.</p>
+      </section>
+
+      <button id="draw-btn" type="button" class="btn btn-primary" disabled>Sortear ganador</button>
+
+      <section id="result" class="result" hidden aria-live="polite">
+        <p class="result-title">¡Tenemos un ganador!</p>
+        <p id="winner-name" class="winner-name"></p>
+      </section>
+    </main>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>

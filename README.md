@@ -27,6 +27,17 @@ npm install
 npx openspec --version
 ```
 
+## Ejecutar la aplicación
+
+La aplicación es solo frontend y usa [Vite](https://vite.dev/).
+
+```sh
+npm install
+npm run dev       # servidor de desarrollo en http://127.0.0.1:5173
+npm run build     # genera la versión de producción en dist/
+npm run preview   # sirve la versión de producción
+```
+
 ## ¿Qué incluye?
 
 | Archivo / carpeta | Para qué sirve |
