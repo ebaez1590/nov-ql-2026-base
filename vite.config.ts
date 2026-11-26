@@ -1,4 +1,4 @@
-import { defineConfig } from 'vite';
+import { defineConfig } from 'vitest/config';
 
 export default defineConfig({
   server: {
@@ -10,5 +10,12 @@ export default defineConfig({
   },
   preview: {
     host: '127.0.0.1',
+  },
+  test: {
+    environment: 'jsdom',
+    include: ['src/**/*.test.ts'],
+    // Procesa los CSS para que `style.css?raw` llegue con su contenido a las pruebas
+    // de tema-visual (por defecto Vitest los reemplaza por un texto vacío).
+    css: true,
   },
 });

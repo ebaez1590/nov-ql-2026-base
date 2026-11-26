@@ -14,11 +14,11 @@ Viene casi vacío a propósito: la aplicación la generas tú, con ayuda de la I
 
 Los tickets de cada reto están en [`instrucciones/`](instrucciones/):
 
-| Reto | Carpeta | Tema |
-| --- | --- | --- |
-| #1 | [`tarea-1/`](instrucciones/tarea-1/) | Vibe coding: generar el selector de ganadores |
-| #2 | [`tarea-2/`](instrucciones/tarea-2/) | Guard rails y Spec Driven Development |
-| #3 | [`tarea-3-optional/`](instrucciones/tarea-3-optional/) | Backend e historial _(opcional)_ |
+| Reto | Carpeta                                                | Tema                                          |
+| ---- | ------------------------------------------------------ | --------------------------------------------- |
+| #1   | [`tarea-1/`](instrucciones/tarea-1/)                   | Vibe coding: generar el selector de ganadores |
+| #2   | [`tarea-2/`](instrucciones/tarea-2/)                   | Guard rails y Spec Driven Development         |
+| #3   | [`tarea-3-optional/`](instrucciones/tarea-3-optional/) | Backend e historial _(opcional)_              |
 
 ## Primeros pasos
 
@@ -38,15 +38,27 @@ npm run build     # genera la versión de producción en dist/
 npm run preview   # sirve la versión de producción
 ```
 
+## Pruebas y calidad
+
+```sh
+npm test          # ejecuta todas las pruebas (Vitest + jsdom) una vez
+npm run lint      # revisa el código con ESLint y el formato con Prettier
+npm run format    # aplica el formato de Prettier a todos los archivos
+```
+
+Las pruebas verifican los escenarios de las especificaciones de `openspec/specs/` y son deterministas (el azar del sorteo se reemplaza por un generador controlado).
+
+GitHub Actions ejecuta `npm run lint`, `npm test` y `npm run build` en cada `push` y en cada pull request hacia `main` (ver `.github/workflows/ci.yml`). Si algo falla, el workflow queda en rojo.
+
 ## ¿Qué incluye?
 
-| Archivo / carpeta | Para qué sirve |
-| --- | --- |
-| `AGENTS.md` | Las reglas del proyecto para la IA. **Está vacío: lo llenas tú.** |
-| `CLAUDE.md` | Hace que Claude Code lea `AGENTS.md`. |
-| `openspec/` | Especificaciones del proyecto con [OpenSpec](https://github.com/Fission-AI/OpenSpec). |
-| `.agents/skills/`, `.claude/skills/` | Comandos de OpenSpec para OpenCode, Claude Code, Codex y GitHub Copilot. |
-| `instrucciones/` | Los tickets de cada reto. |
+| Archivo / carpeta                    | Para qué sirve                                                                        |
+| ------------------------------------ | ------------------------------------------------------------------------------------- |
+| `AGENTS.md`                          | Las reglas del proyecto para la IA. **Está vacío: lo llenas tú.**                     |
+| `CLAUDE.md`                          | Hace que Claude Code lea `AGENTS.md`.                                                 |
+| `openspec/`                          | Especificaciones del proyecto con [OpenSpec](https://github.com/Fission-AI/OpenSpec). |
+| `.agents/skills/`, `.claude/skills/` | Comandos de OpenSpec para OpenCode, Claude Code, Codex y GitHub Copilot.              |
+| `instrucciones/`                     | Los tickets de cada reto.                                                             |
 
 ## Flujo con OpenSpec
 

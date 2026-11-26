@@ -12,16 +12,16 @@ Selector de ganadores para sorteos: el usuario agrega participantes y la app eli
 
 ## Comandos
 
-| Acción | Comando |
-| --- | --- |
-| Instalar | `npm install` |
-| Ejecutar | `npm run dev` → http://127.0.0.1:5173 |
-| Compilar (incluye chequeo de tipos) | `npm run build` |
-| Pruebas | `npm test` |
-| Linter | `npm run lint` |
-| Formato | `npm run format` |
+| Acción                              | Comando                               |
+| ----------------------------------- | ------------------------------------- |
+| Instalar                            | `npm install`                         |
+| Ejecutar                            | `npm run dev` → http://127.0.0.1:5173 |
+| Compilar (incluye chequeo de tipos) | `npm run build`                       |
+| Pruebas                             | `npm test`                            |
+| Linter                              | `npm run lint`                        |
+| Formato                             | `npm run format`                      |
 
-`npm test`, `npm run lint` y `npm run format` se configuran en el Ticket #2; hasta entonces, la verificación mínima es `npm run build`.
+`npm run lint` revisa ESLint y el formato de Prettier. GitHub Actions (`.github/workflows/ci.yml`) ejecuta `npm run lint`, `npm test` y `npm run build` en cada `push` y en cada pull request hacia `main`.
 
 ## Estructura
 
@@ -36,6 +36,12 @@ src/
 - `src/raffle/` no importa nada de `src/ui/` ni usa `document`, `window` ni `crypto`.
 - `src/main.ts` no contiene lógica de negocio ni manipula el DOM directamente.
 - Las pruebas van junto al archivo que prueban: `foo.ts` → `foo.test.ts`.
+
+## Flujo de trabajo con OpenSpec
+
+- **Todo cambio nuevo se especifica primero con OpenSpec**, antes de escribir código: `/openspec-propose <cambio>` → revisión del equipo → `/openspec-apply-change` → `/openspec-archive-change`.
+- No se implementa un cambio cuya propuesta no fue revisada; si durante la implementación aparece algo que la especificación no cubre, se pregunta y se actualiza la especificación antes de seguir.
+- Las especificaciones vigentes viven en `openspec/specs/` y se escriben en español (manteniendo en inglés los encabezados de OpenSpec y las palabras SHALL/MUST).
 
 ## Diseño del código
 

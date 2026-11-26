@@ -8,9 +8,7 @@ export type Participants = readonly string[];
 
 export type Result<T, E> = { ok: true; value: T } | { ok: false; error: E };
 
-export type AddParticipantError =
-  | { kind: 'empty-name' }
-  | { kind: 'duplicate-name'; name: string };
+export type AddParticipantError = { kind: 'empty-name' } | { kind: 'duplicate-name'; name: string };
 
 export type DrawError = { kind: 'not-enough-participants'; minimum: number };
 
