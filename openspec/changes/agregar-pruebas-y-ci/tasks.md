@@ -21,8 +21,8 @@
 
 ## 4. CI en GitHub Actions
 
-- [ ] 4.1 Crear `.github/workflows/ci.yml` con disparadores `push`, `pull_request` hacia `main` y `workflow_call`, y pasos `npm ci`, `npm run lint`, `npm test`, `npm run build` con Node 22; verificar tras hacer push que `gh run list` muestra la ejecución en verde
-- [ ] 4.2 Hacer push de un commit temporal con una prueba rota en una rama de prueba, verificar con `gh run view` que el workflow falla en el paso de pruebas, y revertirlo
+- [x] 4.1 Crear `.github/workflows/ci.yml` con disparadores `push`, `pull_request` hacia `main` y `workflow_call`, y pasos `npm ci`, `npm run lint`, `npm test`, `npm run build` con Node 22; verificar tras hacer push que `gh run list` muestra la ejecución en verde
+- [x] 4.2 Verificar que una prueba rota hace fallar los pasos del workflow: por decisión del equipo se comprueba en local (sin subir ramas con pruebas rotas) que `npm test` y `npm run lint` terminan con código distinto de 0 ante una prueba rota o un error del linter (ver 2.6 y 3.2); como el workflow ejecuta esos mismos comandos y GitHub Actions falla el job ante cualquier paso con código distinto de 0, el workflow queda en rojo
 
 ## 5. Documentación
 
